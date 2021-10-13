@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1366
     height: 685
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 492}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 685
-  m_MinSize: {x: 875, y: 492}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 43
+  controlID: 133
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 16
+  controlID: 88
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -331,9 +331,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a0520000
-      m_LastClickedID: 21152
-      m_ExpandedIDs: 46fbffffa8520000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 9065ffff7e66ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -433,38 +433,38 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/MenuImages
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/MenuImages
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\BJ's\OneDrive\Desktop\JumpyStreet\JumpyStreet
+  m_LastProjectPath: C:\Users\BJ's\Downloads\JumpyStreet\JumpyStreet
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f2520000
-    m_LastClickedID: 21234
-    m_ExpandedIDs: 00000000de520000e052000000ca9a3b
+    m_SelectedIDs: 9cff0000
+    m_LastClickedID: 65436
+    m_ExpandedIDs: 0000000092ff000094ff000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Shaders
+      m_OriginalName: Shaders
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 65446
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 8}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -476,7 +476,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de520000e0520000
+    m_ExpandedIDs: 0000000092ff000094ff0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -588,7 +588,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
       y: 21
       width: 644
       height: 267
-    m_Scale: {x: 0.375, y: 0.375}
+    m_Scale: {x: 0.34765625, y: 0.34765625}
     m_Translation: {x: 322, y: 133.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -609,12 +609,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -858.6667
-      y: -356
-      width: 1717.3334
-      height: 712
+      x: -926.2023
+      y: -384
+      width: 1852.4045
+      height: 768
     m_MinimalGUI: 1
-  m_defaultScale: 0.375
+  m_defaultScale: 0.34765625
   m_LastWindowPixelSize: {x: 644, y: 288}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.010499799, y: -0.0014999171, z: 0.000015749687, w: 0.99994385}
     speed: 2
-    m_Value: {x: -0.010499798, y: 0.0014999171, z: -0.000015749687, w: -0.99994385}
+    m_Value: {x: 0.010499798, y: -0.0014999169, z: 0.000015749685, w: 0.99994373}
   m_Size:
     m_Target: 553.4878
     speed: 2
