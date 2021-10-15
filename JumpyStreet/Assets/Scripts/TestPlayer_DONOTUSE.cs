@@ -15,15 +15,32 @@ public class TestPlayer_DONOTUSE : MonoBehaviour
             print("Error no Terrain Manager Found!");
             Destroy(this);
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.position = new Vector3(transform.position.x + movementSpacer, transform.position.y, transform.position.z);
+            tm.playerPos = transform.position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.position = new Vector3(transform.position.x - movementSpacer, transform.position.y, transform.position.z);
+            tm.playerPos = transform.position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movementSpacer);
+            tm.playerPos = transform.position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - movementSpacer);
             tm.playerPos = transform.position;
         }
     }

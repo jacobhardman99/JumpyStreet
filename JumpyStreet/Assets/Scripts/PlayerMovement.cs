@@ -24,22 +24,49 @@ public class PlayerMovement : MonoBehaviour
     private int score; //Every safe step is worth one point
     private int highScore; //High score will be the highest number of steps in one game
 
+    [SerializeField] private float movementSpacer = 1f;
+
+    private TerrainManager tm;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         score = 0;
         highScore = 0; //0 will be the default score for first time and whatever points players have scored, will replace the previous scores
         gameOverPanel.SetActive(false);
+        tm = GameObject.FindGameObjectWithTag("TerrainManager").GetComponent<TerrainManager>();
+        if (tm == null)
+        {
+            print("Error no Terrain Manager Found!");
+            Destroy(this);
+        }
     }
 
-    void FixedUpdate() 
+    void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal"); 
-        float moveVertical = Input.GetAxis("Vertical"); 
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.position = new Vector3(transform.position.x + movementSpacer, transform.position.y, transform.position.z);
+            tm.playerPos = transform.position;
+        }
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical); 
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.position = new Vector3(transform.position.x - movementSpacer, transform.position.y, transform.position.z);
+            tm.playerPos = transform.position;
+        }
 
-        rb.AddForce(movement * speed);
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movementSpacer);
+            tm.playerPos = transform.position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - movementSpacer);
+            tm.playerPos = transform.position;
+        }
     }
 
     void OnTriggerEnter(Collider other)
