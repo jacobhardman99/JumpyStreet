@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -769,7 +769,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &478005767
 GameObject:
@@ -1154,7 +1154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &771885804
 GameObject:
@@ -1368,89 +1368,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837285499}
   m_CullTransparentMesh: 1
---- !u!1 &963194225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 963194228}
-  - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
---- !u!20 &963194227
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.2943663, g: 0.5943396, b: 0.32008168, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &963194228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -0.05, y: 4.94, z: -10.13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!1 &969704688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,10 +1554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a650dcc8aee4a42a60f48c227295de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  scoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
   movementSpacer: 1
 --- !u!4 &1099725237
 Transform:
@@ -1654,7 +1567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461294874
 GameObject:
@@ -1813,6 +1726,158 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521049788}
   m_CullTransparentMesh: 1
+--- !u!1 &1624936748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624936750}
+  - component: {fileID: 1624936749}
+  m_Layer: 0
+  m_Name: TerrainManager
+  m_TagString: TerrainManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1624936749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624936748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9031f5b3dcd88014ba6e2bf451a6c3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testPlayer: {fileID: 3748195702838556506, guid: b923d90b5b901b541bd2be6fecca860b, type: 3}
+  playerBoundries: {fileID: 71227675284152610, guid: ae85ba1bc90e1c245ad5c3c7524443df, type: 3}
+  startingTileSetname: Field
+  biomes:
+  - name: Forest
+    chunks:
+    - name: Field
+      tileRules:
+      - minimumTiles: 4
+        maximumTiles: 8
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 3fcb4b00e05254640883b3592db6cd6b, type: 3}
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+    - name: LightForest
+      tileRules:
+      - minimumTiles: 3
+        maximumTiles: 6
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+    - name: MedForest
+      tileRules:
+      - minimumTiles: 2
+        maximumTiles: 6
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: ad6b0fead4682564b9a66ff715aa319d, type: 3}
+    - name: HeavyForest
+      tileRules:
+      - minimumTiles: 2
+        maximumTiles: 6
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 0852d0c8560ddbc4c898a13dc5903d74, type: 3}
+    - name: River
+      tileRules:
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+        - {fileID: 5266029837146462348, guid: ad6b0fead4682564b9a66ff715aa319d, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
+        - {fileID: 577002738652642510, guid: 65a7ebae72a90df4aa668767561575ac, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+        - {fileID: 5266029837146462348, guid: ad6b0fead4682564b9a66ff715aa319d, type: 3}
+    - name: WideRiver
+      tileRules:
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 3fcb4b00e05254640883b3592db6cd6b, type: 3}
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+      - minimumTiles: 4
+        maximumTiles: 8
+        tilesToUse:
+        - {fileID: 577002738652642510, guid: 65a7ebae72a90df4aa668767561575ac, type: 3}
+        - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 3fcb4b00e05254640883b3592db6cd6b, type: 3}
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+    - name: Road
+      tileRules:
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+        - {fileID: 5266029837146462348, guid: ad6b0fead4682564b9a66ff715aa319d, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 7609892903823296692, guid: 54e43cd463b53d34591d021a20a168d1, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+        - {fileID: 5266029837146462348, guid: ad6b0fead4682564b9a66ff715aa319d, type: 3}
+    - name: DoubleRoad
+      tileRules:
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 7609892903823296692, guid: 0b8ba7f9d0b0e614d9d66eaacaf266a6, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 3
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 7609892903823296692, guid: 5c93f5b4f70d15843aab6f7859cdac23, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+  tilesAhead: 40
+  tilesBehind: 10
+  minBiomeTiles: 75
+  maxBiomeTiles: 125
+  TileStartOffset: -2
+  TileSpacer: 1
+--- !u!4 &1624936750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624936748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1707263927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,7 +2260,7 @@ RectTransform:
   - {fileID: 1461294875}
   - {fileID: 1097170308}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
