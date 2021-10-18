@@ -1,6 +1,6 @@
 //////////////////////////////////////////////
 //Assignment/Lab/Project: Jumpy Street
-//Name: Malcolm Coronado
+//Name: Malcolm Coronado, Jacob Hardman
 //Section: 2021FA.SGD.285.2141
 //Instructor: Aurore Wold
 //Date: 9/15/2021
@@ -13,12 +13,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     public GameObject gameOverPanel;
     public GameObject pauseMenu;
 
     public Text scoreText;
     public Text highScoreText;
-
+    
     private Rigidbody rb; //As 3D tradition, rigidbody is needed for movement
     private int score; //Every safe step is worth one point
     private int highScore; //High score will be the highest number of steps in one game
@@ -32,48 +33,42 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         score = 0;
         highScore = 0; //0 will be the default score for first time and whatever points players have scored, will replace the previous scores
+       
         gameOverPanel.SetActive(false);
         pauseMenu.SetActive(false);
+        
         tm = GameObject.FindGameObjectWithTag("TerrainManager").GetComponent<TerrainManager>();
         if (tm == null)
         {
-            print("Error no Terrain Manager Found!");
-            Destroy(this);
+            Debug.LogError("Error no Terrain Manager Found!");
+            Destroy(gameObject);
         }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transform.position = new Vector3(transform.position.x + movementSpacer, transform.position.y, transform.position.z);
+        {            
+            Vector3 newPos = new Vector3Int(Mathf.RoundToInt(transform.position.x + movementSpacer), 1, Mathf.RoundToInt(transform.position.z));
             tm.playerPos = transform.position;
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            transform.position = new Vector3(transform.position.x - movementSpacer, transform.position.y, transform.position.z);
+            transform.position = new Vector3Int(Mathf.RoundToInt(transform.position.x - movementSpacer), 1, Mathf.RoundToInt(transform.position.z));
             tm.playerPos = transform.position;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movementSpacer);
+            transform.position = new Vector3Int(Mathf.RoundToInt(transform.position.x), 1, Mathf.RoundToInt(transform.position.z + movementSpacer));
             tm.playerPos = transform.position;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - movementSpacer);
+            transform.position = new Vector3Int(Mathf.RoundToInt(transform.position.x),1,Mathf.RoundToInt(transform.position.z - movementSpacer));
             tm.playerPos = transform.position;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (transform.position.y <= 1.05f)
-            {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * 150);
-            }
         }
     }
 
@@ -81,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hazard"))
         {
+            Debug.LogWarning("Game Over");
             gameOverPanel.SetActive(true);
         }
 
@@ -89,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-
+    
     public void OnPauseButtonClick()
     {
         pauseMenu.SetActive(true);
@@ -112,4 +108,5 @@ public class PlayerMovement : MonoBehaviour
         gameOverPanel.SetActive(false);
         score = 0;
     }
+    
 }

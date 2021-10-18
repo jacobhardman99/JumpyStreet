@@ -110,6 +110,7 @@ public class RandomTileObjectSpawner : MonoBehaviour
     [Header("Prop Variables")]    
     [SerializeField] private MinMax PropMovementSpeed = MinMax.zero;
     [SerializeField] private bool RandomZMovementDirection = false;
+    [SerializeField] private bool allowPlayerStandOn = false;
     [SerializeField] private bool randomizePropRotaion = true;
     [Space(5)]
     [SerializeField] private MinMax3 scaleVariation = MinMax3.one;
@@ -165,7 +166,8 @@ public class RandomTileObjectSpawner : MonoBehaviour
             if (useMovingProps)
             {
                 PropMover newMover = newObsticle.AddComponent<PropMover>();
-                newMover.movement = new Vector3(0,0,newSpeed);                
+                newMover.movement = new Vector3(0,0,newSpeed);
+                newMover.playerCanStandOn = allowPlayerStandOn;
             }
             if (randomizePropRotaion)
             {
