@@ -43,5 +43,13 @@ public class TestPlayer_DONOTUSE : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - movementSpacer);
             tm.playerPos = transform.position;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (transform.position.y <= 1.05f)
+            {
+                GetComponent<Rigidbody>().AddForce(Vector3.up * 150);
+            }
+        }
     }
 }
