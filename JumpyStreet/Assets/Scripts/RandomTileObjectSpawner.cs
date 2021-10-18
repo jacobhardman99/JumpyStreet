@@ -169,7 +169,7 @@ public class RandomTileObjectSpawner : MonoBehaviour
             }
             if (randomizePropRotaion)
             {
-                newObsticle.transform.Rotate(0.0f, Random.Range(0.0f, 360.0f), 0.0f);
+                newObsticle.transform.GetChild(0).transform.Rotate(0.0f, Random.Range(0.0f, 360.0f), 0.0f);
             }
 
             objCounter += 1;

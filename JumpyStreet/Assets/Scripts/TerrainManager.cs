@@ -30,6 +30,7 @@ public struct TerrainControls
 public class TerrainManager : MonoBehaviour
 {
     [SerializeField] private GameObject testPlayer; // !!! Once the final player is implimented remove this and related code ( SpawnTempPlayer() )
+    [SerializeField] private GameObject playerBoundries;
     [Space]
     [SerializeField] private string startingTileSetname;
     [SerializeField] private List<TerrainControls> biomes = new List<TerrainControls>(); // all the data for each of the tile sets also this is the BIOME
@@ -103,7 +104,7 @@ public class TerrainManager : MonoBehaviour
         }
         if (!goodToGo) { return; }
 
-        SpawnTempPlayer();
+        SpawnPlayer();
         newTileXPos = TileStartOffset * TileSpacer;
         GenerateNewBiome(0);
         GenerateTerrainChunk(startingTileSetname); // Note: protection against bad values for any generating terrain chunk is built in when it gets the data for the tile set
@@ -113,10 +114,13 @@ public class TerrainManager : MonoBehaviour
         }
     }
 
-    private void SpawnTempPlayer() // !!! TEMP REMOVE WHEN PLAYER IS IMPLIMENTED
+    private void SpawnPlayer()
     {
-        GameObject tP = Instantiate(testPlayer, transform);
-        tP.transform.position = new Vector3(0, 1, 0);
+        GameObject newPlayer = Instantiate(testPlayer, transform);
+        newPlayer.transform.position = new Vector3(0, 1, 0);
+
+        GameObject newBounds = Instantiate(playerBoundries, transform);
+        newBounds.transform.position = new Vector3(0, 1, 0);
     }
 
     // Handles Generateing a chunk of terrain
