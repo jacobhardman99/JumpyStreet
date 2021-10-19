@@ -49,8 +49,14 @@ public class PropMover : MonoBehaviour
     {
         if (playerCanStandOn && collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.parent = transform;
+            StartCoroutine(delayedPlatformAttatchment(collision));
         }
+    }
+
+    private IEnumerator delayedPlatformAttatchment(Collision collision)
+    {
+        yield return new WaitForEndOfFrame();
+        collision.gameObject.transform.parent = transform;
     }
 
     private void OnCollisionExit(Collision collision)

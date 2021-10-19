@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4836374592752522662}
   - component: {fileID: 8264683997602926639}
   - component: {fileID: 3213236796595984256}
+  - component: {fileID: 6274124525917296454}
   m_Layer: 0
   m_Name: PlayerBoundries
   m_TagString: Untagged
@@ -43,7 +44,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 30, y: 10, z: 10}
   m_Center: {x: 0, y: 4, z: -23.5}
 --- !u!65 &3213236796595984256
 BoxCollider:
@@ -56,5 +57,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 30, y: 10, z: 10}
   m_Center: {x: 0, y: 4, z: 23.5}
+--- !u!65 &6274124525917296454
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71227675284152610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 37}
+  m_Center: {x: -13, y: 4, z: 0}

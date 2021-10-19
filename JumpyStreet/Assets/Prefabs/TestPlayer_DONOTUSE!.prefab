@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4971536593475545864}
   - component: {fileID: 6812122917648665118}
   - component: {fileID: 2839393957118496077}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 247518533452761593}
   - component: {fileID: 2553330469165613034}
   - component: {fileID: 893445357676242596}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TestPlayer_DONOTUSE!
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -160,10 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a650dcc8aee4a42a60f48c227295de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  scoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
   movementSpacer: 1
 --- !u!1 &7637931236899361925
 GameObject:
@@ -176,7 +172,7 @@ GameObject:
   - component: {fileID: 5174105429163557867}
   - component: {fileID: 8454574207800772449}
   - component: {fileID: 2898035752016266079}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpacer = 1f;
 
     private TerrainManager tm;
+    private Vector3 raycastOffset = new Vector3(0, 1, 0);
 
     void Start()
     {
@@ -47,28 +48,44 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            transform.position = new Vector3(Mathf.RoundToInt(transform.position.x + movementSpacer), transform.position.y, Mathf.RoundToInt(transform.position.z));
-            tm.playerPos = transform.position;
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.right), out hit, movementSpacer))
+            {
+                transform.position = new Vector3(Mathf.RoundToInt(transform.position.x + movementSpacer), transform.position.y, Mathf.RoundToInt(transform.position.z));
+                tm.playerPos = transform.position;
+            }          
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
-            transform.position = new Vector3(Mathf.RoundToInt(transform.position.x - movementSpacer), transform.position.y, Mathf.RoundToInt(transform.position.z));
-            tm.playerPos = transform.position;
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.left), out hit, movementSpacer))
+            {
+                transform.position = new Vector3(Mathf.RoundToInt(transform.position.x - movementSpacer), transform.position.y, Mathf.RoundToInt(transform.position.z));
+                tm.playerPos = transform.position;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z + movementSpacer));
-            tm.playerPos = transform.position;
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.forward), out hit, movementSpacer))
+            {
+                transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z + movementSpacer));
+                tm.playerPos = transform.position;
+            }            
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-            transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z - movementSpacer));
-            tm.playerPos = transform.position;
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.back), out hit, movementSpacer))
+            {
+                transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z - movementSpacer));
+                tm.playerPos = transform.position;
+            }            
         }
     }
 

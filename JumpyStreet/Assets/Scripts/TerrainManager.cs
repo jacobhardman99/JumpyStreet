@@ -29,8 +29,8 @@ public struct TerrainControls
 
 public class TerrainManager : MonoBehaviour
 {
-    [SerializeField] private GameObject testPlayer; // !!! Once the final player is implimented remove this and related code ( SpawnTempPlayer() )
-    [SerializeField] private GameObject playerBoundries;
+    [SerializeField] private GameObject testPlayer; // Refrence to spawn in the player
+    [SerializeField] private GameObject playerBoundries; // refence to spawn in the movement bounds
     [Space]
     [SerializeField] private string startingTileSetname;
     [SerializeField] private List<TerrainControls> biomes = new List<TerrainControls>(); // all the data for each of the tile sets also this is the BIOME
@@ -50,18 +50,24 @@ public class TerrainManager : MonoBehaviour
     private List<GameObject> LoadedTiles = new List<GameObject>();
 
     // Dealing with where the player is
+    private GameObject player;
+    private GameObject playerBounds;
     private int playerXTile = 0;
+
 
     // Public interface for the terrain gen simply put in the player's pos every jump and the terrain gen will do the rest
     public Vector3 playerPos 
     {
         set
         {
-            playerXTile = Mathf.RoundToInt(value.x / TileSpacer);
-
+            playerXTile = Mathf.RoundToInt(value.x / TileSpacer);            
             if (playerXTile + tilesAhead > newTileXPos)
             {
                 GenerateTerrainChunk();
+            }
+            if (playerXTile > playerBounds.transform.position.x)
+            {
+                playerBounds.transform.position = new Vector3(playerXTile, 1, 0);
             }
             RemovePassedTiles();
         }
@@ -116,11 +122,11 @@ public class TerrainManager : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        GameObject newPlayer = Instantiate(testPlayer, transform);
-        newPlayer.transform.position = new Vector3(0, 1, 0);
+        player = Instantiate(testPlayer, transform);
+        player.transform.position = new Vector3(0, 1, 0);
 
-        GameObject newBounds = Instantiate(playerBoundries, transform);
-        newBounds.transform.position = new Vector3(0, 1, 0);
+        playerBounds = Instantiate(playerBoundries, transform);
+        playerBounds.transform.position = new Vector3(7.5f, 1, 0);
     }
 
     // Handles Generateing a chunk of terrain
