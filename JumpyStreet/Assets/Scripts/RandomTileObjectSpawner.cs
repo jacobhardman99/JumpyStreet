@@ -1,4 +1,10 @@
-using System.Collections;
+//////////////////////////////////////////////
+//Assignment/Lab/Project: Jumpy Street
+//Name: Jacob Hardman
+//Section: 2021FA.SGD.285.2141
+//Instructor: Aurore Wold
+//Date: 9/15/2021
+/////////////////////////////////////////////
 using System.Collections.Generic;
 using UnityEngine;
 

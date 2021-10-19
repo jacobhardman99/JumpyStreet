@@ -1,12 +1,10 @@
 //////////////////////////////////////////////
 //Assignment/Lab/Project: Jumpy Street
-//Name: Malcolm Coronado
+//Name: Malcolm Coronado, Jacob Hardman
 //Section: 2021FA.SGD.285.2141
 //Instructor: Aurore Wold
 //Date: 9/15/2021
 /////////////////////////////////////////////
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -25,9 +23,12 @@ public class PlayerMovement : MonoBehaviour
     private int highScore; //High score will be the highest number of steps in one game
 
     [SerializeField] private float movementSpacer = 1f;
+    [SerializeField] private ParticleSystem deathParticles;
+    [SerializeField] private GameObject playerMesh;
 
     private TerrainManager tm;
     private Vector3 raycastOffset = new Vector3(0, 1, 0);
+    private bool allowInput = true;
 
     void Start()
     {
@@ -48,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && allowInput)
         {
             RaycastHit hit;
             if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.right), out hit, movementSpacer))
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             }          
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && allowInput)
         {
             RaycastHit hit;
             if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.left), out hit, movementSpacer))
@@ -68,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && allowInput)
         {
             RaycastHit hit;
             if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.forward), out hit, movementSpacer))
@@ -78,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             }            
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && allowInput)
         {
             RaycastHit hit;
             if (!Physics.Raycast(transform.position + raycastOffset, transform.TransformDirection(Vector3.back), out hit, movementSpacer))
@@ -93,6 +94,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hazard"))
         {
+            deathParticles.Play();
+            playerMesh.SetActive(false);
+            gameObject.transform.parent = tm.transform;
+            rb.useGravity = false;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            allowInput = false;
             Debug.LogWarning("Game Over");
             //gameOverPanel.SetActive(true);
         }
