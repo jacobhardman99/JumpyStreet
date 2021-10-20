@@ -538,7 +538,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "GAME OVER. \nYour score in the game was ...\nWould you like to try again?"
+  m_Text: "GAME OVER. \nYour score in the game was ..."
 --- !u!222 &254594923
 CanvasRenderer:
   m_ObjectHideFlags: 0

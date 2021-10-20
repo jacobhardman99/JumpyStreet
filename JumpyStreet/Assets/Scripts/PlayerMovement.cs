@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Text scoreText;
     public Text highScoreText;
+    public Text gameOverText;
 
     private Rigidbody rb; //As 3D tradition, rigidbody is needed for movement
     private int score; //Every safe step is worth one point
@@ -38,8 +39,10 @@ public class PlayerMovement : MonoBehaviour
         pauseMenu = GameObject.Find("pauseMenu");
         scoreText = GameObject.Find("scoreText").GetComponent<Text>();
         highScoreText = GameObject.Find("highScoreText").GetComponent<Text>();
+        gameOverText = GameObject.Find("gameOverText").GetComponent<Text>();
         gameOverPanel.SetActive(false);
         pauseMenu.SetActive(false);
+        UpdateScore();
         tm = GameObject.FindGameObjectWithTag("TerrainManager").GetComponent<TerrainManager>();
         if (tm == null)
         {
@@ -103,12 +106,19 @@ public class PlayerMovement : MonoBehaviour
             allowInput = false;
             Debug.LogWarning("Game Over");
             gameOverPanel.SetActive(true);
+            gameOverText.text = "GAME OVER. Your score in the game was " + score.ToString();
         }
 
         if (other.gameObject.CompareTag("FloorStep"))
         {
-
+            score = score + 1;
+            UpdateScore();
         }
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = "Score: " + score.ToString();
     }
     
     public void OnPauseButtonClick()
