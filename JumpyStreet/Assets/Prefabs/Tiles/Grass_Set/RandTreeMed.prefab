@@ -50,11 +50,17 @@ MonoBehaviour:
   - {fileID: 7287952278945622725, guid: d796919292d81394890d06c1ee8bf1d1, type: 3}
   - {fileID: 7287952278945622725, guid: ca5efe97a412b504c8fb9f0651b04eae, type: 3}
   - {fileID: 7287952278945622725, guid: 319a588347bb3104d91d45c50162a7d9, type: 3}
+  - {fileID: 7287952278945622725, guid: 4a53644d2ec6817408dbcf5b45808a0a, type: 3}
   tileWidth: 81
   distanceBetweenAdjacentObjects: 1
   objectDencity:
     minimum: 0.1
     maximum: 0.2
+  PropMovementSpeed:
+    minimum: 0
+    maximum: 0
+  RandomZMovementDirection: 0
+  playerCanStandOn: 0
   randomizePropRotaion: 1
   scaleVariation:
     minimum: {x: 1, y: 1, z: 1}
