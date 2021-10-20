@@ -11,13 +11,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    /*
     public GameObject gameOverPanel;
     public GameObject pauseMenu;
 
     public Text scoreText;
     public Text highScoreText;
-    */
+
     private Rigidbody rb; //As 3D tradition, rigidbody is needed for movement
     private int score; //Every safe step is worth one point
     private int highScore; //High score will be the highest number of steps in one game
@@ -35,10 +34,12 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         score = 0;
         highScore = 0; //0 will be the default score for first time and whatever points players have scored, will replace the previous scores
-        /*
+        gameOverPanel = GameObject.Find("gameOverPanel");
+        pauseMenu = GameObject.Find("pauseMenu");
+        scoreText = GameObject.Find("scoreText").GetComponent<Text>();
+        highScoreText = GameObject.Find("highScoreText").GetComponent<Text>();
         gameOverPanel.SetActive(false);
         pauseMenu.SetActive(false);
-        */
         tm = GameObject.FindGameObjectWithTag("TerrainManager").GetComponent<TerrainManager>();
         if (tm == null)
         {
@@ -101,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             allowInput = false;
             Debug.LogWarning("Game Over");
-            //gameOverPanel.SetActive(true);
+            gameOverPanel.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("FloorStep"))
@@ -109,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-    /*
+    
     public void OnPauseButtonClick()
     {
         pauseMenu.SetActive(true);
@@ -132,5 +133,4 @@ public class PlayerMovement : MonoBehaviour
         gameOverPanel.SetActive(false);
         score = 0;
     }
-    */
 }
