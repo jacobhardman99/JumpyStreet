@@ -53,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+        }
+
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && allowInput)
         {
             RaycastHit hit;
@@ -113,17 +118,16 @@ public class PlayerMovement : MonoBehaviour
         {
             score = score + 1;
             UpdateScore();
+            gameObject.transform.parent = tm.transform;
+            rb.useGravity = true;
+            gameObject.GetComponent<CapsuleCollider>().enabled = true;
+            allowInput = true;
         }
     }
 
     void UpdateScore()
     {
         scoreText.text = "Score: " + score.ToString();
-    }
-    
-    public void OnPauseButtonClick()
-    {
-        pauseMenu.SetActive(true);
     }
 
     public void OnResumeButtonClick()
@@ -134,6 +138,11 @@ public class PlayerMovement : MonoBehaviour
     public void OnExitButtonClick()
     {
         Application.Quit();
+    }
+
+    public void OnPauseButtonClick()
+    {
+        pauseMenu.SetActive(true);
     }
 
     public void OnRestartButtonClick()
