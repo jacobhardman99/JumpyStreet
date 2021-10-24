@@ -12,7 +12,6 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject gameOverPanel;
-    public GameObject pauseMenu;
 
     public Text scoreText;
     public Text highScoreText;
@@ -36,12 +35,10 @@ public class PlayerMovement : MonoBehaviour
         score = 0;
         highScore = 0; //0 will be the default score for first time and whatever points players have scored, will replace the previous scores
         gameOverPanel = GameObject.Find("gameOverPanel");
-        pauseMenu = GameObject.Find("pauseMenu");
         scoreText = GameObject.Find("scoreText").GetComponent<Text>();
         highScoreText = GameObject.Find("highScoreText").GetComponent<Text>();
         gameOverText = GameObject.Find("gameOverText").GetComponent<Text>();
         gameOverPanel.SetActive(false);
-        pauseMenu.SetActive(false);
         UpdateScore();
         tm = GameObject.FindGameObjectWithTag("TerrainManager").GetComponent<TerrainManager>();
         if (tm == null)
@@ -130,25 +127,14 @@ public class PlayerMovement : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
-    public void OnResumeButtonClick()
-    {
-        pauseMenu.SetActive(false);
-    }
-
     public void OnExitButtonClick()
     {
         Application.Quit();
     }
 
-    public void OnPauseButtonClick()
-    {
-        pauseMenu.SetActive(true);
-    }
-
     public void OnRestartButtonClick()
     {
         SceneManager.LoadScene("MainGame");
-        pauseMenu.SetActive(false);
         gameOverPanel.SetActive(false);
         score = 0;
     }
