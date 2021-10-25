@@ -7,6 +7,7 @@ TagManager:
   - Hazard
   - FloorStep
   - TerrainManager
+  - HighscoreHolder
   layers:
   - Default
   - TransparentFX

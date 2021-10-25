@@ -5025,7 +5025,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a650dcc8aee4a42a60f48c227295de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
+  scoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
+  gameOverText: {fileID: 0}
   movementSpacer: 1
+  movementTimer: 0.2
+  jumpHeight: 0.66
   deathParticles: {fileID: 1544903310345998375}
   playerMesh: {fileID: 7637931236899361925}
 --- !u!1 &7637931236899361925
