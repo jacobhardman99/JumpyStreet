@@ -61,22 +61,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && allowInput)
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.right));
         }
 
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && allowInput)
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.left));
         }
 
-        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && allowInput)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.back));
         }
 
-        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && allowInput)
+        if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.forward));
         }
@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
             allowInput = false;            
             float startTime = Time.time;
             Vector3 fixedHitPoint = new Vector3(Mathf.RoundToInt(hit.point.x), hit.point.y, Mathf.RoundToInt(hit.point.z));
+            transform.GetChild(0).transform.rotation = Quaternion.LookRotation(movementOffset, Vector3.up);
 
             while (Time.time < startTime + movementTimer)
             {
@@ -100,9 +101,11 @@ public class PlayerMovement : MonoBehaviour
                 yield return new WaitForFixedUpdate();
             }
 
+            transform.position = fixedHitPoint;
+
             if (transform.position.x > furthestXPos)
             {
-                furthestXPos = transform.position.x;
+                furthestXPos = transform.position.x + .5f;
                 score += 1;
                 UpdateScore();
             }
@@ -115,12 +118,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hazard"))
         {
+            StopAllCoroutines();
             StartCoroutine(deathSequence());
         }
     }
 
     private IEnumerator deathSequence()
     {
+        score -= 1;
+        UpdateScore();
         deathParticles.Play();
         playerMesh.SetActive(false);
 
@@ -130,15 +136,15 @@ public class PlayerMovement : MonoBehaviour
         gameObject.GetComponent<CapsuleCollider>().enabled = false;
         allowInput = false;
 
-        yield return new WaitForSeconds(deathParticles.duration);
+        yield return new WaitForSeconds(deathParticles.main.duration);
 
         Debug.LogWarning("Game Over");
         gameOverPanel.SetActive(true);
-        if (score - 1 > hsh.highscore)
+        if (score > hsh.highscore)
         {
-            hsh.highscore = score - 1;
+            hsh.highscore = score;
         }
-        gameOverText.text = "GAME OVER.\n Your score in the game was " + (score - 1).ToString() + "\n Your highscore is " + hsh.highscore.ToString();
+        gameOverText.text = "GAME OVER.\n Your score in the game was " + (score).ToString() + "\n Your highscore is " + hsh.highscore.ToString();
     }
 
     void UpdateScore()
