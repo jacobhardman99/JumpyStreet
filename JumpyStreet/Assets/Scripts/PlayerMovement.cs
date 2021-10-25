@@ -13,6 +13,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public AudioSource Jumping;
+    public AudioSource Death;
+
     [HideInInspector] public GameObject gameOverPanel;
     [HideInInspector] public Text scoreText;
     [HideInInspector] public Text highScoreText;
