@@ -10,11 +10,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public AudioSource Jumping; //This sound effect will play when the player makes any form of movement
-    public AudioSource Death; //This sound effect will play when the player collides with any form of hazard (Water, vehicle crashes)
+    [HideInInspector] public AudioSource Jumping; //This sound effect will play when the player makes any form of movement
+    [HideInInspector] public AudioSource Death; //This sound effect will play when the player collides with any form of hazard (Water, vehicle crashes)
 
     [HideInInspector] public GameObject gameOverPanel;
     [HideInInspector] public Text scoreText;
@@ -61,24 +62,29 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() //Every movement will have the jump sound effect player. 
     {
+        Jumping = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
         if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.right));
+            Jumping.Play();
         }
 
         if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.left));
+            Jumping.Play();
         }
 
         if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.back));
+            Jumping.Play();
         }
 
         if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.forward));
+            Jumping.Play();
         }
     }
 
@@ -140,6 +146,8 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.LogWarning("Game Over");
         gameOverPanel.SetActive(true);
+        Death = GameObject.Find("DeathAudio").GetComponent<AudioSource>();
+        Death.Play();
         if (score > hsh.highscore)
         {
             hsh.highscore = score;
