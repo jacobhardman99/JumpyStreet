@@ -142,12 +142,13 @@ public class PlayerMovement : MonoBehaviour
         gameObject.GetComponent<CapsuleCollider>().enabled = false;
         allowInput = false;
 
+        Death = GameObject.Find("DeathAudio").GetComponent<AudioSource>();
+        Death.Play();
+
         yield return new WaitForSeconds(deathParticles.main.duration);
 
         Debug.LogWarning("Game Over");
         gameOverPanel.SetActive(true);
-        Death = GameObject.Find("DeathAudio").GetComponent<AudioSource>();
-        Death.Play();
         if (score > hsh.highscore)
         {
             hsh.highscore = score;
