@@ -5056,6 +5056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a650dcc8aee4a42a60f48c227295de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jumping: {fileID: 0}
+  Death: {fileID: 0}
   gameOverPanel: {fileID: 0}
   scoreText: {fileID: 0}
   highScoreText: {fileID: 0}

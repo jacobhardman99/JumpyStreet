@@ -13,8 +13,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public AudioSource Jumping;
-    public AudioSource Death;
+    public AudioSource Jumping; //This sound effect will play when the player makes any form of movement
+    public AudioSource Death; //This sound effect will play when the player collides with any form of hazard (Water, vehicle crashes)
 
     [HideInInspector] public GameObject gameOverPanel;
     [HideInInspector] public Text scoreText;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Text gameOverText;
 
     private Rigidbody rb; //As 3D tradition, rigidbody is needed for movement
-    private int score = 0; //Every safe step is worth one point
+    private int score = 0; //Every safe step is worth one point (Players cannot spam the movement on the same terrain rows to gain more points).
 
     [SerializeField] private float movementSpacer = 1f;
     [SerializeField] private float movementTimer = .2f;
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         highScoreText.text = "High Score: " + hsh.highscore.ToString();
     }
 
-    void Update()
+    void Update() //Every movement will have the jump sound effect player. 
     {
         if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && allowInput)
         {
@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Hazard"))
+        if (other.gameObject.CompareTag("Hazard")) //With vehicles, players need to be in front of them to die. Hitting the side of one does not count as a death.
         {
             StopAllCoroutines();
             StartCoroutine(deathSequence());

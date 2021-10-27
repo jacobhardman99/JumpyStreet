@@ -68,5 +68,5 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    //Main Menu theme: Spongeball/Floating Block challenge music (The Spongebob Squarepants Movie game (2004)
+    //Main Menu theme: Spongeball/Floating Block challenge music (The Spongebob Squarepants Movie game (2004))
 }
