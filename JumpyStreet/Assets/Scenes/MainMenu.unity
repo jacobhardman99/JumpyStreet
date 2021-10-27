@@ -3273,9 +3273,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'A player will take control of a chicken and the main objective is to get
+  m_Text: 'A player will take control of a person and the main objective is to get
     across as many terrains as possible without crashing into obstacles like water
-    or vehicles. Every forward step is worth one point and the final score (as well
+    or vehicles. Every step forward is worth one point and the final score (as well
     as a high score) will be displayed during and after the game. '
 --- !u!222 &1459848845
 CanvasRenderer:
