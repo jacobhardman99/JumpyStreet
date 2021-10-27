@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         highScoreText = GameObject.Find("highScoreText").GetComponent<Text>();
         gameOverText = GameObject.Find("gameOverText").GetComponent<Text>();
         gameOverPanel.SetActive(false);
+        Jumping = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
 
         UpdateScore();
 
@@ -61,8 +62,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() //Every movement will have the jump sound effect player. 
-    {
-        Jumping = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
+    {        
         if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && allowInput)
         {
             StartCoroutine(runMovement(Vector3.right));
