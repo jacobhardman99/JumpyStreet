@@ -1499,8 +1499,8 @@ MonoBehaviour:
         tilesToUse:
         - {fileID: 5266029837146462348, guid: 3fcb4b00e05254640883b3592db6cd6b, type: 3}
         - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
-      - minimumTiles: 3
-        maximumTiles: 5
+      - minimumTiles: 1
+        maximumTiles: 3
         tilesToUse:
         - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
         - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
@@ -1509,8 +1509,18 @@ MonoBehaviour:
         maximumTiles: 1
         tilesToUse:
         - {fileID: 577002738652642510, guid: 65a7ebae72a90df4aa668767561575ac, type: 3}
-      - minimumTiles: 3
-        maximumTiles: 5
+      - minimumTiles: 1
+        maximumTiles: 3
+        tilesToUse:
+        - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
+        - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
+        - {fileID: 577002738652642510, guid: 65a7ebae72a90df4aa668767561575ac, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 577002738652642510, guid: 65a7ebae72a90df4aa668767561575ac, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 3
         tilesToUse:
         - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
         - {fileID: 577002738652642510, guid: 6419fa1774c7f034f8300707bbbd1ee8, type: 3}
@@ -1567,10 +1577,100 @@ MonoBehaviour:
         maximumTiles: 1
         tilesToUse:
         - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+  - name: Desert
+    chunks:
+    - name: EmptyDesert
+      tileRules:
+      - minimumTiles: 3
+        maximumTiles: 5
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 8fcf5159f1a15ef469c213d5bf80f2ae, type: 3}
+        - {fileID: 5266029837146462348, guid: d12b9f03fec599745821eca33a84ffd6, type: 3}
+        - {fileID: 5266029837146462348, guid: 976a41dd0a4a1c84ab71b8ff6f83a156, type: 3}
+    - name: EmptyDesert2
+      tileRules:
+      - minimumTiles: 3
+        maximumTiles: 5
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 8fcf5159f1a15ef469c213d5bf80f2ae, type: 3}
+        - {fileID: 5266029837146462348, guid: d12b9f03fec599745821eca33a84ffd6, type: 3}
+    - name: OasisSmall
+      tileRules:
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 577002738652642510, guid: 2151ad04c18104049986b76179907544, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 2e39918c666d4534a833b6752d907a1b, type: 3}
+    - name: Road
+      tileRules:
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: d12b9f03fec599745821eca33a84ffd6, type: 3}
+        - {fileID: 5266029837146462348, guid: 8fcf5159f1a15ef469c213d5bf80f2ae, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 7609892903823296692, guid: 863179a8d04800c4780331932b69a6b2, type: 3}
+        - {fileID: 7609892903823296692, guid: 54e43cd463b53d34591d021a20a168d1, type: 3}
+        - {fileID: 7609892903823296692, guid: 54e43cd463b53d34591d021a20a168d1, type: 3}
+        - {fileID: 7609892903823296692, guid: 54e43cd463b53d34591d021a20a168d1, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 8fcf5159f1a15ef469c213d5bf80f2ae, type: 3}
+        - {fileID: 5266029837146462348, guid: d12b9f03fec599745821eca33a84ffd6, type: 3}
+    - name: DoubleRoad
+      tileRules:
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: d12b9f03fec599745821eca33a84ffd6, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 7609892903823296692, guid: 863179a8d04800c4780331932b69a6b2, type: 3}
+        - {fileID: 7609892903823296692, guid: 0b8ba7f9d0b0e614d9d66eaacaf266a6, type: 3}
+        - {fileID: 7609892903823296692, guid: 0b8ba7f9d0b0e614d9d66eaacaf266a6, type: 3}
+        - {fileID: 7609892903823296692, guid: 0b8ba7f9d0b0e614d9d66eaacaf266a6, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 3
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: d12b9f03fec599745821eca33a84ffd6, type: 3}
+      - minimumTiles: 2
+        maximumTiles: 4
+        tilesToUse:
+        - {fileID: 7609892903823296692, guid: 863179a8d04800c4780331932b69a6b2, type: 3}
+        - {fileID: 7609892903823296692, guid: 5c93f5b4f70d15843aab6f7859cdac23, type: 3}
+        - {fileID: 7609892903823296692, guid: 5c93f5b4f70d15843aab6f7859cdac23, type: 3}
+        - {fileID: 7609892903823296692, guid: 5c93f5b4f70d15843aab6f7859cdac23, type: 3}
+      - minimumTiles: 1
+        maximumTiles: 1
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: d12b9f03fec599745821eca33a84ffd6, type: 3}
+    - name: RockyDesert
+      tileRules:
+      - minimumTiles: 3
+        maximumTiles: 5
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 7dfd1ecaa41527646b6bb530c66c33de, type: 3}
+    - name: AridDesert
+      tileRules:
+      - minimumTiles: 3
+        maximumTiles: 5
+        tilesToUse:
+        - {fileID: 5266029837146462348, guid: 9851cfa808752c54e9685cec0394646e, type: 3}
   tilesAhead: 40
   tilesBehind: 10
-  minBiomeTiles: 75
-  maxBiomeTiles: 125
+  minBiomeTiles: 50
+  maxBiomeTiles: 100
   TileStartOffset: -2
   TileSpacer: 1
 --- !u!4 &1624936750
